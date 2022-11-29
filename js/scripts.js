@@ -57,6 +57,10 @@ function listContacts(addressBookToDisplay) {
   contactsDiv.append(ul);
 }
 
+function displayContactDetails(event) {
+  console.log("The id of this <li> is " + event.target.id + ".");
+}
+
 function handleFormSubmission(event) {
   event.preventDefault();
   const inputtedFirstName = document.querySelector("input#new-first-name").value;
@@ -69,4 +73,5 @@ function handleFormSubmission(event) {
 
 window.addEventListener("load", function (){
   document.querySelector("form#new-contact").addEventListener("submit", handleFormSubmission);
+  this.document.querySelector("div#contacts").addEventListener("click", displayContactDetails);
 });
